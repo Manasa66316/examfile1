@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Exam Proctor</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Login Page -->
+        <div id="login-page">
+            <form id="login-form" class="login-form">
+                <h1>Exam Login</h1>
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input id="username" type="text" placeholder="Enter any username" required aria-label="Username">
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input id="password" type="password" placeholder="Enter any password" required aria-label="Password">
+                </div>
+                <button type="submit" class="login-button">Login</button>
+            </form>
+        </div>
+
+        <!-- Exam Page -->
+        <div id="exam-page" class="hidden">
+            <header class="exam-header">
+                <h1 id="part-title">Part 1</h1>
+                <div id="timer" class="timer">30:00</div>
+            </header>
+            <div class="exam-layout">
+                <div class="questions-section">
+                    <div id="question-card" class="question-card">
+                        <p id="question-text" class="question-text"></p>
+                        <div id="options-container" class="options-group"></div>
+                    </div>
+                    <div class="navigation-buttons">
+                        <button id="prev-btn" class="nav-button">Previous</button>
+                        <span id="question-counter">Question 1 / 30</span>
+                        <button id="next-btn" class="nav-button">Next</button>
+                    </div>
+                     <button id="submit-part-btn" class="submit-button">Submit Part</button>
+                </div>
+                <div class="proctor-view">
+                    <h2>Proctoring</h2>
+                    <div id="camera-placeholder" class="camera-placeholder">
+                        <p>Camera is off</p>
+                      <button id="start-camera-btn" class="start-camera-button">Start Camera</button> 
+                    </div>
+                    <video id="camera-feed" class="hidden" autoplay playsinline muted aria-label="Camera Feed"></video>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Page -->
+        <div id="results-page" class="hidden">
+             <div class="results-container">
+                <h2>Exam Complete!</h2>
+                <p class="final-score-text">Your final score is:</p>
+                <p id="final-score" class="final-score">0 / 90</p>
+                <button id="logout-btn" class="try-again-button">Logout</button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
