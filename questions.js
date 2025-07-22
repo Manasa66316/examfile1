@@ -1,6 +1,6 @@
 
-module.exports = {
-  "parts": [
+const questionsData = {
+  parts: [
     [
       { question: "7 − 7 × 7 ÷ 7 + 7 = ?", options: ["6", "7", "8", "14"], answer: "7" },
       { "question": "What is the average of 1, 5, 7, 8 and 9?", "options": ["5", "7", "6", "8"], "answer": "6" },
